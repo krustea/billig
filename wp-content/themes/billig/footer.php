@@ -16,14 +16,16 @@
                     </div>
 
                     <nav class="footer-nav">
-                        <ul>
-                            <li><a href="#">Accueil</a></li>
-                            <li><a href="#">Notre carte</a></li>
-                            <li><a href="#">Notre concept</a></li>
-                            <li><a href="#">Devenir franchisé</a></li>
-                            <li><a href="#">Nous contacter</a></li>
-                            <li><a href="#">Mentions légales</a></li>
-                        </ul>
+                        <?php wp_nav_menu(array( 'theme_location' => 'menu-secondaire' , 'container' => 'ul')); ?>
+
+<!--                        <ul>-->
+<!--                            <li><a href="#">Accueil</a></li>-->
+<!--                            <li><a href="#">Notre carte</a></li>-->
+<!--                            <li><a href="#">Notre concept</a></li>-->
+<!--                            <li><a href="#">Devenir franchisé</a></li>-->
+<!--                            <li><a href="#">Nous contacter</a></li>-->
+<!--                            <li><a href="#">Mentions légales</a></li>-->
+<!--                        </ul>-->
                     </nav>
                 </div>
                 <nav class="footer-social text-center">
@@ -54,8 +56,7 @@
             </p>
         </div><!-- .footer-infos -->
 
-        <div class="footer-img">
-            <img src="<?php echo bloginfo( 'template_url' ); ?>/images/bg_footer.png" alt="">
+        <div class="footer-img" style="background-image: url('<?php echo bloginfo( 'template_url' ); ?>/images/bg_footer.png')">
         </div>
 
     </div><!-- .footer-style -->

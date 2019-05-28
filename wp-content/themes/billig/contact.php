@@ -1,6 +1,10 @@
 <?php /* Template Name: Gabarit contact */ ?>
 
 <?php get_header(); ?>
+
+
+
+
 <section class="hero-3">
 
 
@@ -104,4 +108,4 @@
     </div><!-- .container -->
 
 </section>
-<?php get_footer() ?>
+<?php get_footer(); ?>

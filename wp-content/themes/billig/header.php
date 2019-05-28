@@ -21,6 +21,7 @@
 
 <body <?php body_class(); ?>>
     <header>
+
         <div class="page-header">
 
             <div class="baseline container-fluid">
@@ -37,23 +38,7 @@
 
                 <div class="header-nav">
                     <nav class="main-nav stellarnav">
-
-                        <ul class="">
-                            <li><a href="#">Notre carte</a></li>
-                            <li><a href="#">Notre concept</a></li>
-                            <li><a href="#">Devenir franchisé</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a class="map-market" href="#" title="Localisez-nous" target="_blank"><i
-                                        class="fas fa-map-marker-alt"></i></a></li>
-                            <li>
-                                <form class="search-form" action="#" method="get">
-                                    <input type="text" name="keywords" value="" placeholder="Rechercher">
-                                    <button type="submit" name="submit-btn"><i class="fas fa-search"></i><span
-                                            class="hidden-text">Valider</span>
-                                    </button>
-                                </form>
-                            </li>
-                        </ul>
+                        <?php wp_nav_menu(array( 'theme_location' => 'menu-principal' , 'container' => 'ul')); ?>
 
                     </nav><!-- /nav -->
                 </div>
@@ -61,11 +46,56 @@
 
             </div><!-- .page-header-inner -->
 
+            <div class="owl-carousel owl-theme">
+
+                <?php if (have_rows('header')): ?>
 
 
-            <div class="">
-                    <img src="<?php echo bloginfo( 'template_url' ); ?>/images/carousel-1.jpg" alt="">
+
+            <?php while (have_rows('header')): the_row();
+
+                        $image = get_sub_field('image');
+                        ?>
+
+                        <div class="item">
+                            <img src="<?php echo $image['url']; ?>" alt="">
+                        </div>
+
+                    <?php endwhile; ?>
+
+
+                <?php endif; ?>
+
+
+
+                <?php if (have_rows('header')): ?>
+
+
+                    <?php while (have_rows('header')): the_row();
+
+                        $image = get_sub_field('image');
+
+                        ?>
+
+                        <div class="item">
+
+                            <img src="<?php echo $image['url']; ?>" alt=""/>
+
+                        </div>
+
+
+                    <?php endwhile; ?>
+
+
+                <?php endif; ?>
+
+
+
+
+
             </div> <!--  /owl-carousel owl-theme -->
+
+
 
         </div> <!-- page-header -->
     </header><!-- /header -->

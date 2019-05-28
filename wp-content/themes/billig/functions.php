@@ -2,7 +2,8 @@
 add_action( 'wp_enqueue_scripts', 'insert_css' );
 
 function insert_css() {
-
+    wp_enqueue_script('jquery');
+    wp_register_script('jquery',get_template_directory_uri() . '/js/jquery-3.3.1.min.js');
     wp_enqueue_style( 'owl.carousel', get_template_directory_uri() . '/css/owl.carousel.min.css' );
     wp_enqueue_style( 'owl.theme.default', get_template_directory_uri() . '/css/owl.theme.default.min.css' );
     wp_enqueue_style( 'stellarnav', get_template_directory_uri() . '/css/stellarnav.min.css' );
@@ -20,8 +21,6 @@ function insert_css() {
     wp_register_script('scripts',get_template_directory_uri() . '/js/scripts.js');
     wp_enqueue_script('scripts');
     wp_enqueue_style( 'font-awesome', '//use.fontawesome.com/releases/v5.8.1/css/all.css' );
-    wp_enqueue_script('jquery');
-    wp_register_script('jquery',get_template_directory_uri() . '/js/jquery-3.3.1.min.js');
 
 }
 
