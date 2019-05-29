@@ -37,7 +37,7 @@
                 </div><!-- .header-logo -->
 
                 <div class="header-nav">
-                    <nav class="main-nav stellarnav">
+                    <nav class="main-nav stellarnav ">
                         <?php wp_nav_menu(array( 'theme_location' => 'menu-principal' , 'container' => 'ul')); ?>
 
                     </nav><!-- /nav -->
@@ -48,11 +48,12 @@
 
             <div class="owl-carousel owl-theme">
 
+                <?php $front_page_id = get_option('page_on_front'); ?>
+                <?php $header_posts = new WP_Query(['page_id' => $front_page_id]); ?>
+                <?php $header_posts->the_post(); ?>
                 <?php if (have_rows('header')): ?>
 
-
-
-            <?php while (have_rows('header')): the_row();
+                    <?php while (have_rows('header')): the_row();
 
                         $image = get_sub_field('image');
                         ?>
@@ -66,29 +67,7 @@
 
                 <?php endif; ?>
 
-
-
-                <?php if (have_rows('header')): ?>
-
-
-                    <?php while (have_rows('header')): the_row();
-
-                        $image = get_sub_field('image');
-
-                        ?>
-
-                        <div class="item">
-
-                            <img src="<?php echo $image['url']; ?>" alt=""/>
-
-                        </div>
-
-
-                    <?php endwhile; ?>
-
-
-                <?php endif; ?>
-
+                <?php wp_reset_postdata(); ?>
 
 
 

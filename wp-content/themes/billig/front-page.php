@@ -5,6 +5,7 @@ the_post(); ?>
 
 
 <section id="carte" class="hero-1">
+
     <article class="hero-menu container">
         <div class="gallery-title">
             <h1>Notre carte</h1>
