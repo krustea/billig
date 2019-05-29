@@ -58,7 +58,7 @@ the_post(); ?>
             <article class="qsn container">
                 <?php
 
-                $image = get_field('image_valeur'); ?>
+                $image = get_field('image_engagement'); ?>
 
                 <div class="img">
                     <img src="<?php echo $image['url']; ?>" alt="">
@@ -69,7 +69,7 @@ the_post(); ?>
                         <h2><?php the_field('titre_engagement') ?></h2>
                     <?php endif; ?>
 
-                    <?php if (get_field('titre_engagement')): ?>
+                    <?php if (get_field('description_engagement')): ?>
 
                         <p><?php the_field('description_engagement') ?></p>
                     <?php endif; ?>
